@@ -1,26 +1,152 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0d0618;
+  --card-bg: #1a0a2e;
+  --card-border: #2d1a4a;
+  --primary: #7c3aed;
+  --primary-dark: #4c1d95;
+  --accent: #f97316;
+  --accent-light: #fb923c;
+  --foreground: #f1f0f4;
+  --muted: #a78bfa;
+  --gold: #f59e0b;
+  --silver: #94a3b8;
+  --bronze: #b45309;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* ===== UTILITY CLASSES ===== */
+
+.gold-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.casino-card-bg {
+  background: linear-gradient(135deg, #1a0a2e 0%, #12061e 100%);
+  border: 1px solid var(--card-border);
+}
+
+.felt-texture {
+  background-color: var(--background);
+  background-image: radial-gradient(circle at 25% 25%, rgba(124, 58, 237, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+}
+
+.casino-glow {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3), 0 0 40px rgba(124, 58, 237, 0.1);
+}
+
+.casino-glow-accent {
+  box-shadow: 0 0 20px rgba(249, 115, 22, 0.4), 0 0 40px rgba(249, 115, 22, 0.15);
+}
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24, #f59e0b, #d97706);
+  background-size: 200% auto;
+  animation: shimmer 2.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
+
+/* ===== GRADIENT BUTTON ===== */
+.btn-gradient {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.4s ease;
+}
+
+.btn-gradient:hover::before {
+  left: 100%;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(249, 115, 22, 0.5);
+}
+
+.btn-gradient:active {
+  transform: translateY(0);
+}
+
+/* ===== CARD CORNER ACCENTS ===== */
+.corner-accent::before,
+.corner-accent::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--accent);
+  border-style: solid;
+}
+
+.corner-accent::before {
+  top: 8px;
+  left: 8px;
+  border-width: 2px 0 0 2px;
+}
+
+.corner-accent::after {
+  bottom: 8px;
+  right: 8px;
+  border-width: 0 2px 2px 0;
+}
+
+/* ===== STARS ===== */
+.star-filled {
+  color: #f59e0b;
+}
+
+.star-half {
+  color: #f59e0b;
+  opacity: 0.6;
+}
+
+.star-empty {
+  color: #4b5563;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
 }
