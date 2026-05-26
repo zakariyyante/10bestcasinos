@@ -1,8 +1,8 @@
 export default function AboutSection() {
   const ratingFactors = [
     { icon: "🛡️", text: "UKGC licence verification — we never list unlicensed operators" },
-    { icon: "💰", text: "Bonus value analysis — wagering requirements, max cashout, and T&Cs" },
-    { icon: "⚡", text: "Withdrawal process review — available methods, limits, and verification steps" },
+    { icon: "💰", text: "Bonus value analysis — offer terms, eligibility conditions, and T&Cs" },
+    { icon: "⚡", text: "Account features review — available options, limits, and verification steps" },
     { icon: "🎮", text: "Game library depth — slots, live casino, table games, and RTP" },
     { icon: "📱", text: "Mobile experience — native app quality and browser performance" },
     { icon: "🎧", text: "Customer support — live chat, email response times, and helpfulness" },
@@ -23,19 +23,25 @@ export default function AboutSection() {
         </div>
 
         {/* Advertiser Disclosure */}
-        <div className="mb-10 rounded-2xl border border-purple-700/40 bg-purple-900/15 px-6 py-5">
-          <div className="flex items-start gap-3">
-            <span className="mt-0.5 shrink-0 rounded-md border border-purple-600/50 bg-purple-800/40 px-2 py-0.5 text-xs font-bold uppercase tracking-widest text-purple-300">
-              Ad Disclosure
-            </span>
-            <p className="text-sm text-purple-300 leading-relaxed">
-              <strong className="text-white">10bestukcasinos.org</strong> is owned and operated by{" "}
-              <strong className="text-white">Andreas Karl-Heinz Hirsch</strong>, an independent
-              aggregator running a casino comparison service for the UK market. This site earns
-              revenue through affiliate commissions when users sign up at featured casinos via our
-              tracked links — at no extra cost to you. Our editorial ratings and reviews remain
-              unbiased and are based solely on independent testing. Andreas Karl-Heinz Hirsch is not
-              a licensed gambling operator and does not provide gambling services.
+        <div className="mb-10 rounded-2xl border border-orange-600/30 bg-orange-900/10 px-6 py-5">
+          <p className="mb-3 text-xs font-bold uppercase tracking-widest text-orange-400">
+            Advertiser Disclosure
+          </p>
+          <div className="space-y-3 text-sm text-orange-200/80 leading-relaxed">
+            <p>
+              <strong className="text-orange-200">We do not accept, charge, or receive any money from our users.</strong>{" "}
+              10bestukcasinos.org is a free, independent review and information website. All content
+              published here is provided solely for <strong className="text-orange-200">informational and educational purposes</strong>.
+              We are not a casino or gambling operator and we do not process any transactions or collect
+              payments of any kind from visitors to this site.
+            </p>
+            <p>
+              We may receive a commission from our partners when a visitor accesses a partner&apos;s
+              website through links and information we provide. This commission is paid exclusively
+              by our partners — never by our users — and does not influence our editorial reviews.
+              This site is owned and operated by{" "}
+              <strong className="text-orange-200">Andreas Karl-Heinz Hirsch</strong>, an independent
+              aggregator serving the UK market.
             </p>
           </div>
         </div>
@@ -69,7 +75,7 @@ export default function AboutSection() {
             <p className="text-sm text-amber-200/80 mb-6 leading-relaxed">
               We are committed to promoting safe and responsible gambling. All casinos in our list
               are regulated by the UK Gambling Commission and offer robust responsible gambling tools
-              including deposit limits, self-exclusion, and reality checks.
+              including spending limits, self-exclusion, and reality checks.
             </p>
             <div className="space-y-3 text-sm">
               <a

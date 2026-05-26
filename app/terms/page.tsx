@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/app/components/Header";
@@ -60,7 +62,7 @@ export default function TermsOfService() {
               <p>
                 We strive to keep all reviews, bonus information, and ratings accurate and up to date.
                 However, casino bonuses and terms can change without notice. Always verify current
-                offers directly on the casino&apos;s website before depositing. We accept no liability for
+                offers directly on the casino&apos;s website before registering. We accept no liability for
                 outdated or inaccurate bonus information.
               </p>
             </section>

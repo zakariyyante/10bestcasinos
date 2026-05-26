@@ -106,12 +106,19 @@ export default function Footer() {
                 info@10bestukcasinos.org
               </a>
             </p>
-            <p className="text-sm text-purple-300">
+            <p className="text-sm text-purple-300 mb-4">
               📞 National Gambling Helpline:{" "}
               <a href="tel:08088020133" className="text-amber-400 hover:text-white font-semibold">
                 0808 8020 133
               </a>
             </p>
+            <div className="text-xs text-purple-500 leading-relaxed">
+              <p className="text-purple-400 font-semibold mb-1">Publisher Address</p>
+              <p>Andreas Karl-Heinz Hirsch</p>
+              <p>Masarykovo náměstí 53/1</p>
+              <p>695 01 Hodonín</p>
+              <p>Czechia</p>
+            </div>
           </div>
         </div>
 
@@ -184,21 +191,29 @@ export default function Footer() {
           </a>
         </div>
 
+        {/* Advertiser Disclosure */}
+        <div className="mb-4 rounded-xl border border-orange-600/30 bg-orange-900/10 p-5 text-xs leading-relaxed">
+          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-orange-400">
+            Advertiser Disclosure
+          </p>
+          <p className="text-orange-200/80">
+            <strong className="text-orange-200">We do not accept, charge, or receive any money from our users.</strong>{" "}
+            10bestukcasinos.org is a free, independent review and information website. All content
+            published here — including casino guides, comparisons, and editorial reviews — is
+            provided solely for <strong className="text-orange-200">informational and educational purposes</strong>.
+            We are not a casino, betting operator, or financial service. We do not process transactions,
+            hold funds, or collect payments of any kind from visitors to this site.
+          </p>
+          <p className="mt-2 text-orange-200/80">
+            We may receive a commission from our partners when a visitor accesses a partner&apos;s
+            website through links and information we provide. This commission is paid exclusively
+            by our partners — never by our users — and does not affect our editorial independence
+            or the reviews we publish.
+          </p>
+        </div>
+
         {/* Disclaimer paragraph */}
         <div className="mb-4 rounded-xl border border-purple-900/30 bg-purple-900/10 p-5 text-xs text-purple-400 leading-relaxed space-y-3">
-          <p>
-            <strong className="text-purple-300">Educational Content Notice:</strong>{" "}
-            10bestukcasinos.org is an independent guide and review website. All content published on
-            this site — including casino guides, reviews, and comparisons — is provided strictly for{" "}
-            <strong className="text-purple-300">educational and informational purposes only</strong>.
-            We do not accept money, deposits, or any payments from players or users of this website.
-          </p>
-          <p>
-            <strong className="text-purple-300">Affiliate Disclosure:</strong>{" "}
-            We may receive a commission from our partners when you access a partner&apos;s website through
-            information and links we provide. This commission comes solely from our partners and is at
-            no cost to you. It does not influence our editorial guides or review ratings.
-          </p>
           <p>
             All casinos featured in our guides are regulated by the{" "}
             <a

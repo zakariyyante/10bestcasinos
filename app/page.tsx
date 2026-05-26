@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { brands } from "@/app/data/brands";
 import Header from "@/app/components/Header";
 import Hero from "@/app/components/Hero";

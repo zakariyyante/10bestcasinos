@@ -128,7 +128,7 @@ export default function BrandCard({ brand, rank, gclidValue }: BrandCardProps) {
             <div className="flex items-center gap-2 text-xs text-purple-400">
               <span>✔ UKGC Licensed</span>
               <span>•</span>
-              <span>✔ Multiple Payment Methods</span>
+              <span>✔ UKGC Regulated</span>
               <span>•</span>
               <span>✔ 18+</span>
             </div>
