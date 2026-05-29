@@ -49,6 +49,7 @@ const rankConfig = [
 declare global {
   interface Window {
     gtag_report_conversion?: (url: string) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -57,12 +58,21 @@ export default function BrandCard({ brand, rank, gclidValue }: BrandCardProps) {
 
   function handleClick(e: React.MouseEvent) {
     e.preventDefault();
+
+    // Vercel Analytics event
     track("Brand Click", { brand: brand.name, rank });
+
+    // Google Ads conversion — fires conversion then opens URL via callback
     if (typeof window !== "undefined" && window.gtag_report_conversion) {
       window.gtag_report_conversion(finalUrl);
-    } else {
-      window.open(finalUrl, "_blank", "noopener,noreferrer");
+      return;
     }
+
+    // Fallback: fire raw gtag event and open URL directly
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", { send_to: "AW-18143677749" });
+    }
+    window.open(finalUrl, "_blank", "noopener,noreferrer");
   }
 
   const rankBadge = rank <= 3 ? rankConfig[rank - 1] : null;

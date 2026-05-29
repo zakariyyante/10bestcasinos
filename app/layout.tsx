@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
-const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
+const GTAG_ID = "AW-18143677749";
 
 export default function RootLayout({
   children,
@@ -50,29 +50,31 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
         <Analytics />
+        {/* Google Tag (gtag.js) */}
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_ID}`}
           strategy="afterInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-tag" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GTAG_ID}');
           `}
         </Script>
+        {/* Brand click conversion helper */}
         <Script id="gtag-conversion" strategy="afterInteractive">
           {`
             function gtag_report_conversion(url) {
-              var callback = function () {
-                if (typeof(url) != 'undefined') {
-                  window.open(url, '_blank');
+              var callback = function() {
+                if (typeof url !== 'undefined') {
+                  window.open(url, '_blank', 'noopener,noreferrer');
                 }
               };
               gtag('event', 'conversion', {
-                'send_to': 'AW-XXXXXXXXXX/YYYYYYYYYYYYYYY',
-                'event_callback': callback
+                send_to: '${GTAG_ID}',
+                event_callback: callback
               });
               return false;
             }
