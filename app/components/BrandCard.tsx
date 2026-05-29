@@ -70,7 +70,11 @@ export default function BrandCard({ brand, rank, gclidValue }: BrandCardProps) {
 
     // Fallback: fire raw gtag event and open URL directly
     if (typeof window !== "undefined" && window.gtag) {
-      window.gtag("event", "conversion", { send_to: "AW-18143677749" });
+      window.gtag("event", "conversion", {
+        send_to: "AW-18143677749/naPoCKOJuLMcELWaystD",
+        value: 1.0,
+        currency: "EUR",
+      });
     }
     window.open(finalUrl, "_blank", "noopener,noreferrer");
   }

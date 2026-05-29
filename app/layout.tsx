@@ -73,7 +73,9 @@ export default function RootLayout({
                 }
               };
               gtag('event', 'conversion', {
-                send_to: '${GTAG_ID}',
+                send_to: 'AW-18143677749/naPoCKOJuLMcELWaystD',
+                value: 1.0,
+                currency: 'EUR',
                 event_callback: callback
               });
               return false;
